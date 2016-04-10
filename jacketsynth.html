@@ -1,0 +1,11 @@
+<html>
+<body>
+JacketSynth was a project to create a wearable synthesizer (complete with batteries and speakers) where conductive fabric strips sewn into the arms would serve as keys.
+<p>
+Alas, I didn't get it done in time for Burning Man.
+<p>
+I did get some working Arduino synthesizer code though - it can do 8 simultaneous sounds at a mix rate of 20 khz and the playback is wavetable-based, so at least in principle you can get a variety of interesting sounds without being restricted to square/triangle/saw/sine waves. I implemented a very simple FM-synthesis wave generater (see calcTone) to generate wavetables on the fly, and the test code changes the wave used based on the analog inputs to the Arduino.
+<p>
+Code is here - <a href="jacketsynth.zip">jacketsynth.zip</a>
+</body>
+</html>

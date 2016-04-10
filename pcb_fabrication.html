@@ -1,0 +1,113 @@
+<html>
+<body>
+<h1>PCB Fabrication</h1>
+I can reliably produce boards with trace widths of 5 mils. I use an unmodified HP Laserjet P1006 printer, a GBC H212 laminator with the paper guides removed, HP "Color Laser Brochure Paper, Glossy" (product number Q6610A), standard 1-ounce copper-clad board, an infrared thermometer, and hot HCL-H202 etchant.
+<p>
+(Update 5/5/10 - After seeing Hackaday mention <a href="http://www.pbase.com/mark10970/image/95140145">this link about direct PCB printing</a> I thought I'd try etching 2 mil traces - whaddya know, it actually worked. <a href="http://www.flickr.com/photos/26397129@N00/4583112263/in/photostream/">More pics are up on Flickr</a>.
+<p>
+<img src="http://farm5.static.flickr.com/4063/4583112263_4e0d091016.jpg">
+<p>
+(Update 5/7/10 - Added a note on "toasting" the board after tinting it - makes a big difference in how well the toner adheres.)
+<p>
+<h2>Design</h2>
+<p>
+During layout, trace clearance seems to be far more critical than trace width - the etchant seems to have more trouble getting into narrow gaps and it's hard to tell if the space is completely etched until you've pulled the board out and cleaned it up. 10 mil traces\spaces are a cakewalk and will handle just about everything you need to build - they're thin enough to squeeze underneath a 0603 component or connect to 0.5mm pitch QFN leads, but thick enough to etch reliably even if you screw the transfer up a bit.
+<p>
+Trace widths down to 5 mils print and transfer OK as long as you're very careful with temperatures and cleanliness, but you'll start hitting the DPI limitations of your printer - a 5 mil trace is only 6 printer pixels wide at 1200 dpi. For similar DPI-related reasons, traces that run diagonally will always come out slightly thin - bumping them up by 1 mil evens things out. The finest-pitch chips in my parts box have leads every 0.4 mm - that's 7.8 mils trace & space. 
+<p>
+Fill as much of the board as you can with copper - ground fills are good things, and the extra toner keeps the paper flush against the board during transfer and paper removal.
+<p>
+Always draw a thick (20 mils at least) rectangle of copper around your circuit even if you're not using a ground fill - during toner transfer the border helps keep the paper stuck flat and square against the board and protects the finer traces inside it from getting lifted as the paper begins to peel away during soaking.
+<p>
+<h2>Printing</h2>
+<p>
+My printer is a HP LaserJet P1006 - costs about $90, works great, still on the starter cartridge. The print settings I use are 1200 DPI, econo-mode off, REt (resolution enhancement) on, everything else at defaults.
+<p>
+The magic phrase when looking for suitable toner transfer paper is "HP Brochure Paper". It's thick, smooth, shiny, and disintegrates in water. It does _not_ have the plastic or wax coating that most photo papers do. I get darn near perfect transfers with this paper. The only drawback is that the glossy coating adheres to bare copper a bit - soaking the mostly-clean board in hot water and then buffing the board with a microfiber cloth soaked in white vinegar will remove the last flecks of residue without harming the traces.
+<p>
+If you can't find brochure paper, I've had very good results with pages torn out of an old conference proceedings book. It's medium-weight glossy paper, thicker and smoother than magazine paper. It's not quite as thick as brochure paper but it doesn't warp during printing and it disintegrates easily when soaked in water. It's also rougher than the brochure paper - the surface micro-texture causes trace width to vary by a mil or two, so keep that in mind when laying out your board.
+<p>
+Once the printout comes out of the printer, never touch the printed side with your bare hands.
+<p>
+<h2>Board prep</h2>
+<p>
+This has required a _lot_ of experimentation, and all the steps here seem to be required. Skipping a step will likely hurt the quality of your transfer.
+<ol>
+<li>Traces that are close to the edge of the board won't transfer evenly - the laminator rollers bounce a bit when going over the thick PCB, and the change in pressure causes the toner to fuse irregularly. Copper-clad board is cheap, so cut the board at least 1/4" larger than your design on all sides. You can trim the excess off after toner transfer and before etching, so this won't affect the lifetime of your etchant.</li>
+
+<li>Wet-sand board using fine sandpaper or green scrubby pad until bright and shiny. This will take about 4 passes - sand in one direction until board is covered with fine scratches, turn board 90 degrees and sand in the opposite direction until you can't see the previous scratches anymore.</li>
+
+<li>Scrub board with dish soap (I use Dr. Bronners) and a green scrubby pad, rinse in hot water, dry with paper towel. Do not touch the copper side with your bare hands after this step.</li>
+
+<li>"Tint" the copper by painting it with a q-tip soaked in etchant. Go back and forth over the entire board until it has turned an even dull brown. If you have any shiny spots that don't seem to be reacting, those are places you accidentally touched the board after cleaning it. Repeat step 2, then tint the board again. The etchant seems to chemically roughen the surface of the copper, making the toner stick much better. Toner will flake off a shiny board in large chunks if you scrape it with your fingernail, but a dull board will hold onto toner even if you have to scrub it a bit.</li>
+
+<li>Rinse the board with warm water, then remove the etchant residue by wiping the board down with cotton balls/pads soaked in denatured alcohol until no more yellow/brown stuff comes off. It'll take at least two passes. Skipping this step will increase the chances of the etchant dissolving copper that's supposed to be covered by toner.</li>
+
+<li>"Toast" the board by either putting it in a toaster oven set to the lightest toast shade, or running it through a hot laminator. The heat forces out the tiny amounts of alcohol & water that absorb into the tinted surface - even if it appeared dry before this step, it's still wet down in the microscopic pores.  If you skip this step, the vapor produced by the absorbed liquid will push up against the toner during lamination and etching and cause it to bubble and flake off.</li>
+</ol>
+(I hadn't realized the toasting step was necessary until I rushed through making a board, running it through the laminator immediately after tinting/washing - the board looked dry, but when it hit the hot etchant the trapped vapor made the toner puff up off the board like a thousand tiny black blisters.)
+<p>
+<h2>Toner transfer via laminator</h2>
+<p>
+I'm using a GBC H212, which works great - gets plenty hot, and if you remove the paper guides it can handle PCB-thickness material with no jamming. I always use the hottest setting on the laminator.
+<p>
+Trim your printout with scissors using the border rectangle as a guide, use canned air to blow any dust off your tinted copper board and your printout, then sandwich the two together and tape the top edge of the printout to the board with a piece of Kapton (heat-resistant polyimide) tape. If you don't tape the printout down it can shift slightly as it gets pulled through the rollers and smear the toner, if you tape more than one side down the paper will buckle slightly as it gets stretched by the laminator.
+<p>
+Preheat the laminator thoroughly. If you use the GBC it'll beep at you when it thinks it's hot - ignore this and let it heat for another 20 minutes.
+<p>
+Feed the board into the laminator tape-side first, and as the board comes out the other side measure the temperature of the printout side with an infrared thermometer. You want to keep running the board through until you hit a temperature of 105 degrees C - while toner melts at around 160 degrees C, but if you actually get the board up to that temperature you'll have a disastrous smeary mess. Turn the board 90 degrees after each pass so that all the traces get transferred evenly.
+<p>
+<h2>Paper removal</h2>
+<p>
+The easiest way is to spray the paper with hot water via your sink's spray nozzle until it all disintegrates, or you can just let it soak for a minute and rub the big chunks of paper away with your thumbs or a soft cloth. Never clean a toner-transfered board with anything more abrasive than your fingers - not even paper towels. If you tinted the board properly the traces should be adhered fairly well, but I've still managed to knock them off by getting overly aggressive with a paper towel.
+<p>
+Alternate between soaking and rubbing until you've removed all the paper fibers, making sure to clear out any bits stuck in the narrow gaps between traces (use a q-tip to remove stuff in the gaps if necessary). 
+<p>
+If you're using the HP Brochure Paper, double-check that you've removed all the paper residue between traces by letting the board dry out for a moment - the residue will turn white and you'll be able to see any stuck-on spots more easily. White residue stuck to the toner itself is fine. Stubborn residue can be removed with white vinegar and a soft cloth - the vinegar will dissolve the clay compounds in the coating, softening it.
+<p>
+Once all the paper is all off, you can check to see if the toner adhered properly by gently scraping the border rectangle you drew around your circuit with your fingernail - if nothing comes off, you should be good to go. If a chunk of toner comes off, redo the transfer and let the board get a few degrees hotter.
+<p>
+Wash the board gently with soap and hot water to remove any oil residue from your fingers.
+<p>
+<h2>Etching</h2>
+<p>
+I use the simple 1 part hydrochloric acid to 2 parts hydrogen peroxide combo - You'll only need a wee bit, so use an ounce of acid and two of peroxide to start. The HCL-H202 mixture works fine with a few caveats -
+<ol>
+<li>The etchant really needs to be hot. I use a double-boiler-ish setup with my etchant in a pyrex bowl, heated in a water bath in an electric skillet. You don't need much etchant, just enough to cover the board with room to slosh it around a bit. A puddle 1/2" deep is plenty.</li>
+
+<li>The reaction is oxidizer-limited. In theory you can bubble air through the etchant to keep it full of O2, but that's messy and a huge pain in the ass. It's much easier to just add a half-capful of H2O2 each time you use the etchant (and you'll have to do this each time, as the H2O2 breaks down rapidly once it's in the solution).</li>
+
+<li>The color of the etchant and the boards in it will tell you everything you need to know about the status of the etching -
+<ul>
+<li>Good HCL-H202 etchant should be pure emerald green and completely transparent.</li>
+
+<li>A board that's etching properly should be salmon-colored with wisps of brown "smoke" (actually microscopic particles of cuprous chloride) coming off it.</li>
+
+<li>If the etchant is murky, add peroxide.</li>
+
+<li>If a piece of shiny copper dipped in the etchant doesn't instantly turn dull brown or if your etching starts taking twice as long as usual despite a nice emerald green color, add a capful of acid. You'll probably only need 1 capful of acid for every 10 capfuls of peroxide you add, if that.</li>
+
+<li>If you see bubbles forming on the PCB while etching, you've got too much peroxide.</li>
+</ul></li>
+
+<li>Agitate, agitate, agitate. The more you shake the board the faster it will etch and the cleaner your traces will be. Just don't make the stupid mistake I did and try to hold the board with a pair of tongs - the board popped out and I splashed etchant all over my carpet. Take a foot-long piece of solid core insulated wire and twist it around opposite corners of the board, then twist the two ends together on the back of the board - it'll hold the board securely and you'll have a nice handle.</li>
+</ol>
+<p>
+<h2>Toner removal and cleanup</h2>
+<p>
+"Goof-Off" works marvelously, but it is vile stuff and evaporates quickly. Turpentine is almost as good and much less unpleasant. Alcohol won't do a damn thing, but once one of the above solvents has loosened the toner it's good for rinsing away the debris.
+<p>
+The dull brown tinted copper under the toner isn't really solderable, so now you need to convert it back to plain copper. You can do this in a few ways -
+<p>
+<ol>
+<li>Scrub with a green scrubby pad (works well and the board comes out quite pretty, but be very careful if you have any fine (< 10 mil) traces).</li>
+
+<li>Dip the board in tinning solution (the brand I use is called Tin-It) - it'll instantly dissolve the brown stuff. You can leave the board in there if you want, but I find the plain copper to be easier to solder to (works very well, surface is easily solderable).</li>
+
+<li>Wipe the board with a mixture of hot water and crushed Vitamin C tablets, then polish with a paper towel (surface won't be shiny, but it'll be solderable).</li>
+
+<li>Wipe the board with water-soluble paste flux (I use Orange Crush brand), then clean with hot water (super-messy).</li>
+</ol>
+
+</body>
+</html>

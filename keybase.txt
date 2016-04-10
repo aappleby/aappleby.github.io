@@ -1,0 +1,66 @@
+==================================================================
+https://keybase.io/aappleby
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://tanjent.com
+  * I am aappleby (https://keybase.io/aappleby) on keybase.
+  * I have a public key with fingerprint BA56 CF0F 5687 52AC 3D35  CAF1 1085 B038 4C7E F49D
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "ba56cf0f568752ac3d35caf11085b0384c7ef49d",
+            "host": "keybase.io",
+            "key_id": "1085b0384c7ef49d",
+            "uid": "5ade14783a7916e18e2ff0bb0939ed00",
+            "username": "aappleby"
+        },
+        "service": {
+            "hostname": "tanjent.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1413599357,
+    "expire_in": 157680000,
+    "prev": "94506310cca3e9d9778b15c4c3af64537b21401914b6d9e026407ef68aafe286",
+    "seqno": 5,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v1.1.3
+Comment: https://keybase.io/crypto
+
+yMHrAnicbZFdSBRRFMd31b4WtoyKCHpYrgQLiczsfO9DYQ9Rm6uQEobidmfmzjp+
+zIyz49oqa/UiEYVUFpnVQ1rQoliZyaoPkmGWoGGCpUWISvYhmWlYYTYj9tZ9udxz
+fv//Oeeep85Em8PedfbVV+eiZ9A+0DNXbstJfxmtArwqRoC3ChSj1UuSlSDSNV1W
+DOAFPKRoQcIkimYZygMFQiQoAUo4jrEUjxEsKTBIIjkRpIJCNWQpTBsehlCarJox
+8xGQRTP6H758NUFBEeEkwxKQ4XAa4SzySBLG8xhHcEjEMAsMIV2BpcikIdS0EsRH
+QDQVmNGwLCCrZ6v0GmFApQgpRpqglppSTVcNVVBLzEShYWheS2dENAusQHxgzSLA
+y4pojm0KwkgPyaoCvLhJCoZseeIkTlAcR1BMKkAnNVlHAdkiKIZmMfNYZVDYtORI
+CqMJHBMESCBO5BiG5XFKIAUCSjRJEQzvwUkM53CSp0UOYR6axMzvoFkIJeRhaWAN
+VaaowEuZbcKgaRmSgwo0ynUEok968pNsdodt/boEa3E2x6bkf+s8GN+w4h/y1TU5
+G6a759SOxlxX7Gq3+2fB7YWWtLZLdZOPN+8bO2Nz1Z/PMJqf3+x/zWYdX45Vjggz
+9rH7fZN0ce/A4Pdv1d4iuidhZvunPzkrvzP5+K6lgG9i+OiWX/7defPu/IQ7JTue
+7f349kbfnq2VJ5KPZb3Im54YCra7iJr+zxv7OxPdGe8c/vptb1JafZ1c7MvhAeBc
+yc6M301PHqnF3PdSjNjowsXhR0vNYsOh/Xm15CwwZmvCQ9rDyQuNU+PXH8SPVPtP
+75SnpjuqO+F8U5srUlp3q6s3yelePDd6pT09WtAyHs05EFwqa2lVTiUm6Zezr5V9
++DFb4WNz3y//BdrmH4U=
+=MstH
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/aappleby
+
+==================================================================
+

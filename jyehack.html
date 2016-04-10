@@ -1,0 +1,16 @@
+<html>
+<body>
+JyeHack is a project to create a replacement firmware from scratch for the JyeTech.com oscilloscope kit. JyeTech does not release the source code to their kit, but since the kit is easily hackable it's quite trivial to reverse-engineer the settings the microcontroller uses to drive the external components (the voltage inverter for the amplifier, the LCD screen, buttons, etc).
+<p>
+Actually writing a UI that can take advantage of those components is a bit more of a pain.
+<p>
+The current version of my firmware can capture samples at a fixed rate of ~5 msamples/sec, draw a graph on screen, and respond to some very basic button presses to move the trigger point around.
+<p>
+It uses a pretty crappy way of handling triggering - the scope is always capturing data, and every time the buffer fills up it checks to see if the trigger was hit. If it was, it displays the buffer. If not, it throws the buffer away and starts capturing again. If the trigger happens often this is not so bad, if the trigger is infrequent it can miss it entirely.
+<p>
+The code to drive the LCD was written from scratch and is massively faster than the stock firmware. It's interrupt-driven and can push data to the display as fast as (and faster than) the display can accept it. 100+ frames per second is quite feasible, but you end up with fewer clocks left over for other features. On the other hand, the high framerate provides a bit of temporal antialiasing which improves the appearance of the otherwise mediocre display.
+<p>
+<strike>Code is accessible via Subversion at [[svn://tanjent.com/public]]</strike>
+<p>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+<body>
+<h1>How to make routing single-sided PCBs easier</h1>
+Routing single-sided PCBs for home fabrication can be a pain in the ass. Here are some tips for making this slightly less painful
+<p>
+<h2>Jumpers</h2>
+<p>
+1206 components fit nicely on a 0.1" grid. There's no good way of tricking Eagle into thinking two points are connected even though there's no wire on the board layout.
+<p>
+Instead, create two 0.06" square vias spaced 0.1" apart, and connect them using a trace on the bottom side of the board. The vias will be the right size to mount a 1206 jumper on after etching, and Eagle will stop complaining about the missing connection.
+<p>
+<h2>Ground fills, ground pinching</h2>
+<p>
+Ground fills are great, they reduce noise and make your etchant last longer. But, if you rely on them to connect every ground point on your board you'll get into trouble - just because two points are electrically connected via the ground fill doesn't mean that the connection between them is low-impedance. Clearance rules can squeeze the ground fill into thin strips between component leads and cause two points that should be connected to have only some thin convoluted path winding around the board between them.
+<p>
+To avoid ground plane weirdness, always route ground connections manually and then lay a ground fill poly over the board once everything is connected. 
+<p>
+<h2>Bullseye layout</h2>
+<p>
+The traces that invariably end up getting in the way are the power and ground traces. To make this less painful, draw power and ground traces in a "bullseye" pattern, with the components in the middle.
+<p>
+Draw a wire around the perimeter of your board and label it power. Draw another wire 0.05" inside the power trace and label it as ground. As you route, work from the outside of the board towards the center and connect power and ground nets to the perimeter loops whenever possible (using the 1206 jumper trick above to go over the ground loop to the power loop).
+<p>
+Once the board is routed, add a ground fill poly over the ground bullseye trace to fill in the empty space in the board and fatten the power perimeter loop to 0.05" or so to reduce impedance.
+</body>
+</html>
