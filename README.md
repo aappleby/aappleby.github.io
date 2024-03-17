@@ -20,9 +20,11 @@
   - Redesigned Pinwheel, my RISC-V microcontroller core, so that it runs 2 threads at once interleaved.
   - Passes all the RV32I tests, getting it working again on a FPGA is on my to-do list (requires more work regarding block ram inference)
 - [PicoRVD](https://github.com/aappleby/picorvd)
-  - Reverse engineered the CH32V003 debugging protocol
-  - Wrote a GDB-compatible debug probe inteface for it that runs on the Raspberry Pi Pico.
-  - The debugging code was later used by cnlohr@ to add debug support to his 'ch32v003fun' project - 
+  - Reverse engineered the debug protocol for the 10-cent 'CH32V003' RISC-V microcontroller.
+  - Wrote a GDB-compatible debug probe inteface for it that runs on the Raspberry Pi Pico
+  - Can flash binaries, single-step, set arbitrary numbers of breakpoints.
+  - Faster than the manufacturer-provided debug interface.
+  - The debugging code was later used by cnlohr@ to add debug support to his [ch32v003fun](https://github.com/cnlohr/ch32v003fun) project
 - [Wideboard](https://github.com/aappleby/wideboard)
   - Rewrote Wideboard to use Typescript.
   - Wideboard is a proof-of-concept text renderer that can handle _huge_ amounts of text at once
