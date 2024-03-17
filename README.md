@@ -1,6 +1,6 @@
 # One year of full-time work on personal projects since leaving Google in March of 2023
 
-I worked at Google for a bit over 12 years. In March of 2023 I decided to leave Google and see how much I could accomplish in a year of working full-time on my own projects. Here is what I accomplished:
+I worked at Google for a bit over 12 years. In March of 2023 I decided to leave Google and see how much I could accomplish in a year of working full-time on my own projects. Here is what I accomplished, in no particular order:
 
 - [Hancho](https://github.com/aappleby/hancho)
   - Created Hancho, my "simple and pleasant" build system.
