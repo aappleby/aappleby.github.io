@@ -12,6 +12,7 @@
   - Contains a full C99 parser as an 'example' :D
   - Also a conformant JSON parser as another example
   - The generated debug symbols are horrific, but the compiled code is small and fast.
+  - Documentation and tutorial links are broken :/
 - [Metron](https://github.com/aappleby/metron)
   - Ported my C++-to-SystemVerilog translator Metron to use Matcheroni and Parseroni for parsing C++.
   - Documentation has rotted a bit but the test suites still pass.
