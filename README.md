@@ -6,6 +6,9 @@ On March 17, 2023 I left Google and decided to see what I could do in a year of 
 
 Here is what I accomplished, in no particular order:
 
+![Github activity diagraom for March 2023-2024](github_activity_2023.jpg)
+
+
 - [Hancho](https://github.com/aappleby/hancho)
   - Created Hancho, my "simple and pleasant" build system.
   - One file of Python, copy-paste it into your repo and go.
