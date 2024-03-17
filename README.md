@@ -9,6 +9,8 @@
   - Powerful templating system via abuse of Python's eval() and Javascript-style prototypal object inheritance.
 - [Matcheroni & Parseroni](https://github.com/aappleby/matcheroni)
   - Created Matcheroni and Parseroni, my lexing and parsing toolkit that uses C++20 templates to generate recursive descent parsers at compile time.
+  - Contains a full C99 parser as an 'example' :D
+  - Also a conformant JSON parser as another example
   - The generated debug symbols are horrific, but the compiled code is small and fast.
 - [Metron](https://github.com/aappleby/metron)
   - Ported my C++-to-SystemVerilog translator Metron to use Matcheroni and Parseroni for parsing C++.
