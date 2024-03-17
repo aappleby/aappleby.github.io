@@ -14,6 +14,7 @@
   - The generated debug symbols are horrific, but the compiled code is small and fast.
 - [Metron](https://github.com/aappleby/metron)
   - Ported my C++-to-SystemVerilog translator Metron to use Matcheroni and Parseroni for parsing C++.
+  - Documentation has rotted a bit but the test suites still pass.
 - [Pinwheel](https://github.com/aappleby/pinwheel)
   - Redesigned Pinwheel, my RISC-V microcontroller core, so that it runs 2 threads at once interleaved.
   - Passes all the RV32I tests, getting it working again on a FPGA is on my to-do list (requires more work regarding block ram inference)
