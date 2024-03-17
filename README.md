@@ -17,7 +17,9 @@
   - Ported my C++-to-SystemVerilog translator Metron to use Matcheroni and Parseroni for parsing C++.
   - Documentation has rotted a bit but the test suites still pass.
 - [Pinwheel](https://github.com/aappleby/pinwheel)
-  - Redesigned Pinwheel, my RISC-V microcontroller core, so that it runs 2 threads at once interleaved.
+  - Redesigned Pinwheel, my RISC-V microcontroller core, so that it runs 2 hardware threads (harts) at once interleaved.
+  - The two harts can be swapped between N 'ready to run' threads in a single instruction.
+  - Threads can read/write each other's register files, single step each other - you can in principle have a debug interface running in one hart while the other hart is running an application (implementation TBD) 
   - Passes all the RV32I tests, getting it working again on a FPGA is on my to-do list (requires more work regarding block ram inference)
 - [PicoRVD](https://github.com/aappleby/picorvd)
   - Reverse engineered the debug protocol for the 10-cent 'CH32V003' RISC-V microcontroller.
@@ -26,7 +28,7 @@
   - Faster than the manufacturer-provided debug interface.
   - The debugging code was later used by cnlohr@ to add debug support to his [ch32v003fun](https://github.com/cnlohr/ch32v003fun) project
 - [Wideboard](https://github.com/aappleby/wideboard)
-  - Rewrote Wideboard to use Typescript.
+  - Ported Wideboard to Typescript, which was a surprisingly pleasant experience and far easier than using Google's Closure compiler.
   - Wideboard is a proof-of-concept text renderer that can handle _huge_ amounts of text at once
   - Wideboard can display the entire source of the Linux kernel in a web browser tab.
 - [gbmicrotest](https://github.com/aappleby/gbmicrotest)
@@ -39,4 +41,5 @@
   - It has code rotted and is not very usable
 - [repo](https://github.com/aappleby/repo)
   - Created a meta-repo for all my projects and wrote some Python tools to manage it
-  - My personal projects contain a symlinks/ directory that point to other projects in the metarepo - this seems to be a better way than git submodules for handling inter-project dependencies, at the cost of having dependencies spread horizontally across the meta-repo directory instead of nested under a parent repo.
+  - My personal projects contain a symlinks/ directory that point to other projects in the meta-repo
+  - This seems to be a better way than git submodules for handling inter-project dependencies, at the cost of having dependencies spread horizontally across the meta-repo directory instead of nested under a parent repo.
