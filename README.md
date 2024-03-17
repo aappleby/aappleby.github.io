@@ -29,8 +29,10 @@
   - Turned my collection of tiny Gameboy hardware tests into a standalone repo
 - [metronica](https://github.com/aappleby/metronica)
   - Pulled out just the audio portion of my game boy emulator to make Metronica, a tool for replaying Game Boy audio dumps.
+  - It works but I never actually used it to play anything other than the "Link's Awakening" title screen music. :D
 - [plait](https://github.com/aappleby/plait)
   - Pulled my circuit graph visualization tool Plait out into its own repo
-  - (It has code rotted and is not very usable)
+  - It has code rotted and is not very usable
 - [repo](https://github.com/aappleby/repo)
   - Created a meta-repo for all my projects and wrote some Python tools to manage it
+  - My personal projects contain a symlinks/ directory that point to other projects in the metarepo - this seems to be a better way than git submodules for handling inter-project dependencies, at the cost of having dependencies spread horizontally across the meta-repo directory instead of nested under a parent repo.
